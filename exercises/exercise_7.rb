@@ -10,3 +10,16 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Enter a store name: "
+print "> "
+@name_input = $stdin.gets.chomp
+
+begin
+  Store.create!(
+    name: @name_input,
+    mens_apparel: false,
+    womens_apparel: false
+  )
+rescue => invalid
+  puts invalid
+end
